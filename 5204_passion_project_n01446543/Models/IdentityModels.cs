@@ -29,5 +29,8 @@ namespace _5204_passion_project_n01446543.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Card> Cards { get; set; }
+        public DbSet<Deck> Decks { get; set; }
     }
 }
