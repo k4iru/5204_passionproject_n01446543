@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations;
+using _5204_passion_project_n01446543.Models;
 
 namespace _5204_passion_project_n01446543.Controllers
 {
@@ -25,6 +27,15 @@ namespace _5204_passion_project_n01446543.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+
+        // on login redirect to user dashboard
+        public ActionResult Dashboard(LoginViewModel model)
+        {
+            ViewBag.Message = "DashBoard";
+
+            return View(model);
         }
     }
 }
