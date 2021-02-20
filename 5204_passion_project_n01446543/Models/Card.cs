@@ -32,5 +32,7 @@ namespace _5204_passion_project_n01446543.Models
 
         [DisplayName("Card Answer")]
         public string CardAnswer { get; set; }
+
+        public int DeckID { get; set; }
     }
 }

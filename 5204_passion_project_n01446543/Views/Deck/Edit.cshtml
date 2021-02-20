@@ -1,49 +1,43 @@
-﻿@model _5204_passion_project_n01446543.Models.Deck
+﻿@model _5204_passion_project_n01446543.Models.ViewModels.ShowDeck
 
 @{
-    Layout = null;
+    ViewBag.Title = "Edit";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
-</head>
-<body>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    
-    
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>Deck</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.DeckID)
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.DeckTitle, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.DeckTitle, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.DeckTitle, "", new { @class = "text-danger" })
+<h4>Deck: @Model.Deck.DeckTitle</h4>
+<div style="overflow:hidden;">
+    <div style="float:left; margin-right:2%; width:49%;">
+
+        <div>@Html.ActionLink("Delete", "DeleteConfirm", new { id = Model.Deck.DeckID })</div>
+
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Deck.DeckTitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Deck.DeckTitle)
+            </dd>
+
+
+        </dl>
+    </div>
+    <div style="float:left;margin-right:0%; width:49%;">
+        <div>
+            <h4>Players:</h4>
+            <div>
+                @foreach (var card in Model.deckCards)
+                {
+                <div>
+                    @Html.Display(card.CardAnswer) | @Html.Display(card.CardQuestion)
                 </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
+                }
             </div>
         </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
     </div>
-</body>
-</html>
+    <div style="clear:both;"></div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "List")
+</p>

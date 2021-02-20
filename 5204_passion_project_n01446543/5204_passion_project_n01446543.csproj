@@ -204,6 +204,14 @@
     <Compile Include="Migrations\202102190553382_test.Designer.cs">
       <DependentUpon>202102190553382_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102200516353_deck_cards.cs" />
+    <Compile Include="Migrations\202102200516353_deck_cards.Designer.cs">
+      <DependentUpon>202102200516353_deck_cards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102200603269_update_card_model.cs" />
+    <Compile Include="Migrations\202102200603269_update_card_model.Designer.cs">
+      <DependentUpon>202102200603269_update_card_model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Card.cs" />
@@ -307,6 +315,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102190553382_test.resx">
       <DependentUpon>202102190553382_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102200516353_deck_cards.resx">
+      <DependentUpon>202102200516353_deck_cards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102200603269_update_card_model.resx">
+      <DependentUpon>202102200603269_update_card_model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
